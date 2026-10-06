@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    style{
+        
+    }
+</head>
+<body>
+      <form action="/usuarios" method="get">
+        <button type="submit">Listar usuarios</button>
+        <% if(usuarios){
+            <%for(u in usuarios){
+            <h2>Lista de Usuarios</h2>
+            <label>Nome do usuario</label>
+           <p><% u.nome</p>
+           <label for="">Idade</label>
+           <p><% u.idade %></p>
+            }}else{
+                <p>Nenhum usuario encontrado</p>
+            }
+    </form>
+    <form action="/usuarios" method="post">
+         
+        <label for="" >Digite seu nome:</label>
+        <input type="text" name="nome" id="">
+        <label for="">Difite sua idade:</label>
+        <input type="number" name="idade" id="">
+        <button type="submit">Enviar</button>
+        <p style="position: fixed; width: 50%; gap: 15px"> <% mensagem %></p>
+    </form>
+        <form action="/usuarios/:u.id?method=PUT" method="post">
+            <select name="novaInfo" id="">
+                <option value="nome">Nome</option>
+                <option value="idade">Idade</option>
+            </select>
+        <button type="submit">Enviar</button>
+        <p style="position: fixed; width: 50%; gap: 15px"> <% mensagem %></p>
+    </form>
+      <form action="/usuarios/:u.id?method=DELETE" method="post">
+        <button type="submit">Excluir usuario</button>        
+        <p style="position: fixed; width: 50%; gap: 15px"> <% mensagem %></p>
+    </form>
+</body>
+</html>
